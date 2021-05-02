@@ -42,6 +42,8 @@ namespace Calculator
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.Parse_It = new System.Windows.Forms.Button();
+            this.plus_minus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -82,6 +84,7 @@ namespace Calculator
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(377, 27);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // clear
             // 
@@ -173,11 +176,33 @@ namespace Calculator
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.num_click);
             // 
+            // Parse_It
+            // 
+            this.Parse_It.Location = new System.Drawing.Point(319, 167);
+            this.Parse_It.Name = "Parse_It";
+            this.Parse_It.Size = new System.Drawing.Size(70, 59);
+            this.Parse_It.TabIndex = 13;
+            this.Parse_It.Text = "Parse it";
+            this.Parse_It.UseVisualStyleBackColor = true;
+            this.Parse_It.Click += new System.EventHandler(this.Parse_It_Click);
+            // 
+            // plus_minus
+            // 
+            this.plus_minus.Location = new System.Drawing.Point(164, 357);
+            this.plus_minus.Name = "plus_minus";
+            this.plus_minus.Size = new System.Drawing.Size(70, 70);
+            this.plus_minus.TabIndex = 14;
+            this.plus_minus.Text = "+/-";
+            this.plus_minus.UseVisualStyleBackColor = true;
+            this.plus_minus.Click += new System.EventHandler(this.plus_minus_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 450);
+            this.Controls.Add(this.plus_minus);
+            this.Controls.Add(this.Parse_It);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -213,6 +238,8 @@ namespace Calculator
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button Parse_It;
+        private System.Windows.Forms.Button plus_minus;
     }
 }
 
