@@ -231,6 +231,7 @@ namespace Calculator
             this.backspace.TabIndex = 18;
             this.backspace.Text = "<-";
             this.backspace.UseVisualStyleBackColor = true;
+            this.backspace.Click += new System.EventHandler(this.backspace_Click);
             // 
             // button_division
             // 
