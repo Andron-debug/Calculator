@@ -14,6 +14,7 @@ namespace Calculator
     {
         char action;
         double num;
+        double m = 0;//память
         public Form1()
         {
             InitializeComponent();
@@ -89,6 +90,26 @@ namespace Calculator
         {
             textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
             if (textBox1.Text == "") textBox1.Text = "0";
+        }
+
+        private void MR_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Convert.ToString(m);
+        }
+
+        private void MC_Click(object sender, EventArgs e)
+        {
+            m = 0;
+        }
+
+        private void M_pluse_Click(object sender, EventArgs e)
+        {
+            m += Double.Parse(textBox1.Text);
+        }
+
+        private void M_minuse_Click(object sender, EventArgs e)
+        {
+            m -= Double.Parse(textBox1.Text);
         }
     }
 }

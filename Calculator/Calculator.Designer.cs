@@ -51,6 +51,10 @@ namespace Calculator
             this.button_exponentiation = new System.Windows.Forms.Button();
             this.button_root = new System.Windows.Forms.Button();
             this.button_result = new System.Windows.Forms.Button();
+            this.MR = new System.Windows.Forms.Button();
+            this.MC = new System.Windows.Forms.Button();
+            this.M_pluse = new System.Windows.Forms.Button();
+            this.M_minuse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -89,13 +93,13 @@ namespace Calculator
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(227, 27);
+            this.textBox1.Size = new System.Drawing.Size(400, 27);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(266, 12);
+            this.clear.Location = new System.Drawing.Point(441, 10);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(70, 29);
             this.clear.TabIndex = 4;
@@ -225,7 +229,7 @@ namespace Calculator
             // 
             // backspace
             // 
-            this.backspace.Location = new System.Drawing.Point(342, 12);
+            this.backspace.Location = new System.Drawing.Point(517, 10);
             this.backspace.Name = "backspace";
             this.backspace.Size = new System.Drawing.Size(70, 29);
             this.backspace.TabIndex = 18;
@@ -273,11 +277,55 @@ namespace Calculator
             this.button_result.UseVisualStyleBackColor = true;
             this.button_result.Click += new System.EventHandler(this.button_result_Click);
             // 
+            // MR
+            // 
+            this.MR.Location = new System.Drawing.Point(441, 85);
+            this.MR.Name = "MR";
+            this.MR.Size = new System.Drawing.Size(70, 70);
+            this.MR.TabIndex = 23;
+            this.MR.Text = "MR";
+            this.MR.UseVisualStyleBackColor = true;
+            this.MR.Click += new System.EventHandler(this.MR_Click);
+            // 
+            // MC
+            // 
+            this.MC.Location = new System.Drawing.Point(517, 85);
+            this.MC.Name = "MC";
+            this.MC.Size = new System.Drawing.Size(70, 70);
+            this.MC.TabIndex = 24;
+            this.MC.Text = "MC";
+            this.MC.UseVisualStyleBackColor = true;
+            this.MC.Click += new System.EventHandler(this.MC_Click);
+            // 
+            // M_pluse
+            // 
+            this.M_pluse.Location = new System.Drawing.Point(441, 161);
+            this.M_pluse.Name = "M_pluse";
+            this.M_pluse.Size = new System.Drawing.Size(70, 70);
+            this.M_pluse.TabIndex = 25;
+            this.M_pluse.Text = "M+";
+            this.M_pluse.UseVisualStyleBackColor = true;
+            this.M_pluse.Click += new System.EventHandler(this.M_pluse_Click);
+            // 
+            // M_minuse
+            // 
+            this.M_minuse.Location = new System.Drawing.Point(517, 161);
+            this.M_minuse.Name = "M_minuse";
+            this.M_minuse.Size = new System.Drawing.Size(70, 70);
+            this.M_minuse.TabIndex = 26;
+            this.M_minuse.Text = "M-";
+            this.M_minuse.UseVisualStyleBackColor = true;
+            this.M_minuse.Click += new System.EventHandler(this.M_minuse_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 415);
+            this.ClientSize = new System.Drawing.Size(601, 415);
+            this.Controls.Add(this.M_minuse);
+            this.Controls.Add(this.M_pluse);
+            this.Controls.Add(this.MC);
+            this.Controls.Add(this.MR);
             this.Controls.Add(this.button_result);
             this.Controls.Add(this.button_root);
             this.Controls.Add(this.button_exponentiation);
@@ -331,6 +379,10 @@ namespace Calculator
         private System.Windows.Forms.Button button_exponentiation;
         private System.Windows.Forms.Button button_root;
         private System.Windows.Forms.Button button_result;
+        private System.Windows.Forms.Button MR;
+        private System.Windows.Forms.Button MC;
+        private System.Windows.Forms.Button M_pluse;
+        private System.Windows.Forms.Button M_minuse;
     }
 }
 
