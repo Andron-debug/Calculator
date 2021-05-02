@@ -55,5 +55,10 @@ namespace Calculator
             if ((textBox1.Text[0] != '0') && (textBox1.Text[0] != '-')) textBox1.Text = "-" + textBox1.Text;
             else if (textBox1.Text[0] == '-') textBox1.Text = textBox1.Text.Substring(1);    
         }
+
+        private void selecting_an_action(object sender, EventArgs e)
+        {
+
+        }
     }
 }

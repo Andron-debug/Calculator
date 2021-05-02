@@ -42,8 +42,15 @@ namespace Calculator
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.Parse_It = new System.Windows.Forms.Button();
             this.plus_minus = new System.Windows.Forms.Button();
+            this.button_plus = new System.Windows.Forms.Button();
+            this.button_minus = new System.Windows.Forms.Button();
+            this.button_multiplication = new System.Windows.Forms.Button();
+            this.backspace = new System.Windows.Forms.Button();
+            this.button_division = new System.Windows.Forms.Button();
+            this.button_exponentiation = new System.Windows.Forms.Button();
+            this.button_root = new System.Windows.Forms.Button();
+            this.button_result = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -58,7 +65,7 @@ namespace Calculator
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(88, 357);
+            this.button0.Location = new System.Drawing.Point(88, 332);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(70, 70);
             this.button0.TabIndex = 1;
@@ -68,7 +75,7 @@ namespace Calculator
             // 
             // buttonFloat
             // 
-            this.buttonFloat.Location = new System.Drawing.Point(12, 357);
+            this.buttonFloat.Location = new System.Drawing.Point(12, 332);
             this.buttonFloat.Name = "buttonFloat";
             this.buttonFloat.Size = new System.Drawing.Size(70, 70);
             this.buttonFloat.TabIndex = 2;
@@ -82,15 +89,15 @@ namespace Calculator
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(377, 27);
+            this.textBox1.Size = new System.Drawing.Size(227, 27);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(319, 85);
+            this.clear.Location = new System.Drawing.Point(266, 12);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(70, 70);
+            this.clear.Size = new System.Drawing.Size(70, 29);
             this.clear.TabIndex = 4;
             this.clear.Text = "Clear";
             this.clear.UseVisualStyleBackColor = true;
@@ -176,19 +183,9 @@ namespace Calculator
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.num_click);
             // 
-            // Parse_It
-            // 
-            this.Parse_It.Location = new System.Drawing.Point(319, 167);
-            this.Parse_It.Name = "Parse_It";
-            this.Parse_It.Size = new System.Drawing.Size(70, 59);
-            this.Parse_It.TabIndex = 13;
-            this.Parse_It.Text = "Parse it";
-            this.Parse_It.UseVisualStyleBackColor = true;
-            this.Parse_It.Click += new System.EventHandler(this.Parse_It_Click);
-            // 
             // plus_minus
             // 
-            this.plus_minus.Location = new System.Drawing.Point(164, 357);
+            this.plus_minus.Location = new System.Drawing.Point(164, 332);
             this.plus_minus.Name = "plus_minus";
             this.plus_minus.Size = new System.Drawing.Size(70, 70);
             this.plus_minus.TabIndex = 14;
@@ -196,13 +193,98 @@ namespace Calculator
             this.plus_minus.UseVisualStyleBackColor = true;
             this.plus_minus.Click += new System.EventHandler(this.plus_minus_Click);
             // 
+            // button_plus
+            // 
+            this.button_plus.Location = new System.Drawing.Point(266, 85);
+            this.button_plus.Name = "button_plus";
+            this.button_plus.Size = new System.Drawing.Size(70, 70);
+            this.button_plus.TabIndex = 15;
+            this.button_plus.Text = "+";
+            this.button_plus.UseVisualStyleBackColor = true;
+            this.button_plus.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // button_minus
+            // 
+            this.button_minus.Location = new System.Drawing.Point(266, 161);
+            this.button_minus.Name = "button_minus";
+            this.button_minus.Size = new System.Drawing.Size(70, 70);
+            this.button_minus.TabIndex = 16;
+            this.button_minus.Text = "-";
+            this.button_minus.UseVisualStyleBackColor = true;
+            this.button_minus.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // button_multiplication
+            // 
+            this.button_multiplication.Location = new System.Drawing.Point(266, 237);
+            this.button_multiplication.Name = "button_multiplication";
+            this.button_multiplication.Size = new System.Drawing.Size(70, 70);
+            this.button_multiplication.TabIndex = 17;
+            this.button_multiplication.Text = "*";
+            this.button_multiplication.UseVisualStyleBackColor = true;
+            this.button_multiplication.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // backspace
+            // 
+            this.backspace.Location = new System.Drawing.Point(342, 12);
+            this.backspace.Name = "backspace";
+            this.backspace.Size = new System.Drawing.Size(70, 29);
+            this.backspace.TabIndex = 18;
+            this.backspace.Text = "<-";
+            this.backspace.UseVisualStyleBackColor = true;
+            // 
+            // button_division
+            // 
+            this.button_division.Location = new System.Drawing.Point(342, 85);
+            this.button_division.Name = "button_division";
+            this.button_division.Size = new System.Drawing.Size(70, 70);
+            this.button_division.TabIndex = 19;
+            this.button_division.Text = "/";
+            this.button_division.UseVisualStyleBackColor = true;
+            this.button_division.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // button_exponentiation
+            // 
+            this.button_exponentiation.Location = new System.Drawing.Point(342, 161);
+            this.button_exponentiation.Name = "button_exponentiation";
+            this.button_exponentiation.Size = new System.Drawing.Size(70, 70);
+            this.button_exponentiation.TabIndex = 20;
+            this.button_exponentiation.Text = "^";
+            this.button_exponentiation.UseVisualStyleBackColor = true;
+            this.button_exponentiation.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // button_root
+            // 
+            this.button_root.Location = new System.Drawing.Point(342, 237);
+            this.button_root.Name = "button_root";
+            this.button_root.Size = new System.Drawing.Size(70, 70);
+            this.button_root.TabIndex = 21;
+            this.button_root.Text = "^";
+            this.button_root.UseVisualStyleBackColor = true;
+            this.button_root.Click += new System.EventHandler(this.selecting_an_action);
+            // 
+            // button_result
+            // 
+            this.button_result.Location = new System.Drawing.Point(266, 332);
+            this.button_result.Name = "button_result";
+            this.button_result.Size = new System.Drawing.Size(146, 70);
+            this.button_result.TabIndex = 22;
+            this.button_result.Text = "=";
+            this.button_result.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 450);
+            this.ClientSize = new System.Drawing.Size(428, 415);
+            this.Controls.Add(this.button_result);
+            this.Controls.Add(this.button_root);
+            this.Controls.Add(this.button_exponentiation);
+            this.Controls.Add(this.button_division);
+            this.Controls.Add(this.backspace);
+            this.Controls.Add(this.button_multiplication);
+            this.Controls.Add(this.button_minus);
+            this.Controls.Add(this.button_plus);
             this.Controls.Add(this.plus_minus);
-            this.Controls.Add(this.Parse_It);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -238,8 +320,15 @@ namespace Calculator
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button Parse_It;
         private System.Windows.Forms.Button plus_minus;
+        private System.Windows.Forms.Button button_plus;
+        private System.Windows.Forms.Button button_minus;
+        private System.Windows.Forms.Button button_multiplication;
+        private System.Windows.Forms.Button backspace;
+        private System.Windows.Forms.Button button_division;
+        private System.Windows.Forms.Button button_exponentiation;
+        private System.Windows.Forms.Button button_root;
+        private System.Windows.Forms.Button button_result;
     }
 }
 
