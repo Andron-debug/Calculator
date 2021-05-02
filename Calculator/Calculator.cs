@@ -12,6 +12,8 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        char action;
+        double num;
         public Form1()
         {
             InitializeComponent();
@@ -40,16 +42,6 @@ namespace Calculator
         {
             textBox1.Text = "0";
         }
-
-        private void Parse_It_Click(object sender, EventArgs e)
-        {
-            double d;
-            if(Double.TryParse(textBox1.Text, out d))
-            {
-                MessageBox.Show(d.ToString());
-            }
-        }
-
         private void plus_minus_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text[0] != '0') && (textBox1.Text[0] != '-')) textBox1.Text = "-" + textBox1.Text;
@@ -58,7 +50,39 @@ namespace Calculator
 
         private void selecting_an_action(object sender, EventArgs e)
         {
+            Button key = (Button)sender;
+            action = key.Text[0];
+            num = Double.Parse(textBox1.Text);
+            textBox1.Text = "0";
+        }
 
+        private void button_result_Click(object sender, EventArgs e)
+        {
+            double num2 = Double.Parse(textBox1.Text);
+            switch (action)
+            {
+                case '+': 
+                    textBox1.Text = (Convert.ToString(num + num2));
+                    break;
+                case '-':
+                    textBox1.Text = (Convert.ToString(num - num2));
+                    break;
+                case '*':
+                    textBox1.Text = (Convert.ToString(num * num2));
+                    break;
+                case '/':
+                    textBox1.Text = (Convert.ToString(num/num2));
+                    break;
+                case '^':
+                    textBox1.Text = (Convert.ToString(Math.Pow(num, num2)));
+                    break;
+                case '√':
+                    textBox1.Text = (Convert.ToString(Math.Pow(num, 1/num2)));
+                    break;
+                default:
+                    MessageBox.Show("Действие не выбрано");
+                    break;
+            }
         }
     }
 }

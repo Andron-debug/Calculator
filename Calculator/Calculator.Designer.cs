@@ -258,7 +258,7 @@ namespace Calculator
             this.button_root.Name = "button_root";
             this.button_root.Size = new System.Drawing.Size(70, 70);
             this.button_root.TabIndex = 21;
-            this.button_root.Text = "^";
+            this.button_root.Text = "√ ";
             this.button_root.UseVisualStyleBackColor = true;
             this.button_root.Click += new System.EventHandler(this.selecting_an_action);
             // 
@@ -270,6 +270,7 @@ namespace Calculator
             this.button_result.TabIndex = 22;
             this.button_result.Text = "=";
             this.button_result.UseVisualStyleBackColor = true;
+            this.button_result.Click += new System.EventHandler(this.button_result_Click);
             // 
             // Form1
             // 
