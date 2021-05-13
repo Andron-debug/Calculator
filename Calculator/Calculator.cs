@@ -55,6 +55,7 @@ namespace Calculator
             action = key.Text[0];
             num = Double.Parse(textBox1.Text);
             textBox1.Text = "0";
+            textBox2.Text = key.Text;
         }
 
         private void button_result_Click(object sender, EventArgs e)
@@ -72,13 +73,15 @@ namespace Calculator
                     textBox1.Text = (Convert.ToString(num * num2));
                     break;
                 case '/':
-                    textBox1.Text = (Convert.ToString(num/num2));
+                    if (num2 == 0) MessageBox.Show("Деленние на ноль");
+                    else textBox1.Text = (Convert.ToString(num/num2));
                     break;
                 case '^':
                     textBox1.Text = (Convert.ToString(Math.Pow(num, num2)));
                     break;
                 case '√':
-                    textBox1.Text = (Convert.ToString(Math.Pow(num, 1/num2)));
+                    if ((num < 0) && (num2 % 2 == 0)) MessageBox.Show("Мнимое число");
+                    else textBox1.Text = (Convert.ToString(Math.Pow(num, 1/num2)));
                     break;
                 default:
                     MessageBox.Show("Действие не выбрано");
@@ -110,6 +113,11 @@ namespace Calculator
         private void M_minuse_Click(object sender, EventArgs e)
         {
             m -= Double.Parse(textBox1.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

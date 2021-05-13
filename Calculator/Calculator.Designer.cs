@@ -55,6 +55,7 @@ namespace Calculator
             this.MC = new System.Windows.Forms.Button();
             this.M_pluse = new System.Windows.Forms.Button();
             this.M_minuse = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -90,10 +91,10 @@ namespace Calculator
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(88, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(400, 27);
+            this.textBox1.Size = new System.Drawing.Size(324, 27);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -317,11 +318,19 @@ namespace Calculator
             this.M_minuse.UseVisualStyleBackColor = true;
             this.M_minuse.Click += new System.EventHandler(this.M_minuse_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(27, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(33, 27);
+            this.textBox2.TabIndex = 27;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 415);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.M_minuse);
             this.Controls.Add(this.M_pluse);
             this.Controls.Add(this.MC);
@@ -350,6 +359,7 @@ namespace Calculator
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,6 +393,7 @@ namespace Calculator
         private System.Windows.Forms.Button MC;
         private System.Windows.Forms.Button M_pluse;
         private System.Windows.Forms.Button M_minuse;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
