@@ -56,6 +56,9 @@ namespace Calculator
             this.M_pluse = new System.Windows.Forms.Button();
             this.M_minuse = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button_1x = new System.Windows.Forms.Button();
+            this.button_sin = new System.Windows.Forms.Button();
+            this.button_cos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -94,13 +97,13 @@ namespace Calculator
             this.textBox1.Location = new System.Drawing.Point(88, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(324, 27);
+            this.textBox1.Size = new System.Drawing.Size(400, 27);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(441, 10);
+            this.clear.Location = new System.Drawing.Point(517, 12);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(70, 29);
             this.clear.TabIndex = 4;
@@ -230,7 +233,7 @@ namespace Calculator
             // 
             // backspace
             // 
-            this.backspace.Location = new System.Drawing.Point(517, 10);
+            this.backspace.Location = new System.Drawing.Point(593, 12);
             this.backspace.Name = "backspace";
             this.backspace.Size = new System.Drawing.Size(70, 29);
             this.backspace.TabIndex = 18;
@@ -272,7 +275,7 @@ namespace Calculator
             // 
             this.button_result.Location = new System.Drawing.Point(266, 332);
             this.button_result.Name = "button_result";
-            this.button_result.Size = new System.Drawing.Size(146, 70);
+            this.button_result.Size = new System.Drawing.Size(222, 70);
             this.button_result.TabIndex = 22;
             this.button_result.Text = "=";
             this.button_result.UseVisualStyleBackColor = true;
@@ -280,7 +283,7 @@ namespace Calculator
             // 
             // MR
             // 
-            this.MR.Location = new System.Drawing.Point(441, 85);
+            this.MR.Location = new System.Drawing.Point(517, 85);
             this.MR.Name = "MR";
             this.MR.Size = new System.Drawing.Size(70, 70);
             this.MR.TabIndex = 23;
@@ -290,7 +293,7 @@ namespace Calculator
             // 
             // MC
             // 
-            this.MC.Location = new System.Drawing.Point(517, 85);
+            this.MC.Location = new System.Drawing.Point(593, 85);
             this.MC.Name = "MC";
             this.MC.Size = new System.Drawing.Size(70, 70);
             this.MC.TabIndex = 24;
@@ -300,7 +303,7 @@ namespace Calculator
             // 
             // M_pluse
             // 
-            this.M_pluse.Location = new System.Drawing.Point(441, 161);
+            this.M_pluse.Location = new System.Drawing.Point(517, 161);
             this.M_pluse.Name = "M_pluse";
             this.M_pluse.Size = new System.Drawing.Size(70, 70);
             this.M_pluse.TabIndex = 25;
@@ -310,7 +313,7 @@ namespace Calculator
             // 
             // M_minuse
             // 
-            this.M_minuse.Location = new System.Drawing.Point(517, 161);
+            this.M_minuse.Location = new System.Drawing.Point(593, 161);
             this.M_minuse.Name = "M_minuse";
             this.M_minuse.Size = new System.Drawing.Size(70, 70);
             this.M_minuse.TabIndex = 26;
@@ -325,11 +328,44 @@ namespace Calculator
             this.textBox2.Size = new System.Drawing.Size(33, 27);
             this.textBox2.TabIndex = 27;
             // 
+            // button_1x
+            // 
+            this.button_1x.Location = new System.Drawing.Point(418, 85);
+            this.button_1x.Name = "button_1x";
+            this.button_1x.Size = new System.Drawing.Size(70, 70);
+            this.button_1x.TabIndex = 28;
+            this.button_1x.Text = "1/x";
+            this.button_1x.UseVisualStyleBackColor = true;
+            this.button_1x.Click += new System.EventHandler(this.button_1x_Click);
+            // 
+            // button_sin
+            // 
+            this.button_sin.Location = new System.Drawing.Point(418, 161);
+            this.button_sin.Name = "button_sin";
+            this.button_sin.Size = new System.Drawing.Size(70, 70);
+            this.button_sin.TabIndex = 29;
+            this.button_sin.Text = "sin";
+            this.button_sin.UseVisualStyleBackColor = true;
+            this.button_sin.Click += new System.EventHandler(this.button_sin_Click);
+            // 
+            // button_cos
+            // 
+            this.button_cos.Location = new System.Drawing.Point(418, 237);
+            this.button_cos.Name = "button_cos";
+            this.button_cos.Size = new System.Drawing.Size(70, 70);
+            this.button_cos.TabIndex = 30;
+            this.button_cos.Text = "cos";
+            this.button_cos.UseVisualStyleBackColor = true;
+            this.button_cos.Click += new System.EventHandler(this.button_cos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 415);
+            this.ClientSize = new System.Drawing.Size(765, 415);
+            this.Controls.Add(this.button_cos);
+            this.Controls.Add(this.button_sin);
+            this.Controls.Add(this.button_1x);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.M_minuse);
             this.Controls.Add(this.M_pluse);
@@ -394,6 +430,9 @@ namespace Calculator
         private System.Windows.Forms.Button M_pluse;
         private System.Windows.Forms.Button M_minuse;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button_1x;
+        private System.Windows.Forms.Button button_sin;
+        private System.Windows.Forms.Button button_cos;
     }
 }
 

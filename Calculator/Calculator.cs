@@ -119,5 +119,21 @@ namespace Calculator
         {
 
         }
+
+        private void button_1x_Click(object sender, EventArgs e)
+        {
+            if (double.Parse(textBox1.Text) != 0) textBox1.Text = Convert.ToString(1/double.Parse(textBox1.Text));
+            else MessageBox.Show("Деленние на ноль");
+        }
+
+        private void button_sin_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Convert.ToString(Math.Sin(double.Parse(textBox1.Text)));
+        }
+
+        private void button_cos_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Convert.ToString(Math.Cos(double.Parse(textBox1.Text)));
+        }
     }
 }
