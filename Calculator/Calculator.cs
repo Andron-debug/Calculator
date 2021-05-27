@@ -13,8 +13,8 @@ namespace Calculator
     public partial class Form1 : Form
     {
         char action;
-        double num;
         double m = 0;//память
+        double rez = 0;
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +42,9 @@ namespace Calculator
         private void clear_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
+            textBox2.Text = "";
+            action = ' ';
+            rez = 0;
         }
         private void plus_minus_Click(object sender, EventArgs e)
         {
@@ -53,7 +56,32 @@ namespace Calculator
         {
             Button key = (Button)sender;
             action = key.Text[0];
-            num = Double.Parse(textBox1.Text);
+            rez = Double.Parse(textBox1.Text);
+            double num2 = Double.Parse(textBox1.Text);
+            switch (action)
+            {
+                case '+':
+                    rez = rez + num2;
+                    break;
+                case '-':
+                    rez = rez - num2;
+                    break;
+                case '*':
+                    rez = rez * num2;
+                    break;
+                case '/':
+                    if (num2 == 0) MessageBox.Show("Деленние на ноль");
+                    else rez = rez / num2;
+                    break;
+                case '^':
+                    rez = Math.Pow(rez, num2);
+                    break;
+                case '√':
+                    if ((rez < 0) && (num2 % 2 == 0)) MessageBox.Show("Мнимое число");
+                    else rez = Math.Pow(rez, 1 / num2);
+                    break;
+               
+            }
             textBox1.Text = "0";
             textBox2.Text = key.Text;
         }
@@ -63,25 +91,25 @@ namespace Calculator
             double num2 = Double.Parse(textBox1.Text);
             switch (action)
             {
-                case '+': 
-                    textBox1.Text = (Convert.ToString(num + num2));
+                case '+':
+                    textBox1.Text = (Convert.ToString(rez + num2));
                     break;
                 case '-':
-                    textBox1.Text = (Convert.ToString(num - num2));
+                    textBox1.Text = (Convert.ToString(rez - num2));
                     break;
                 case '*':
-                    textBox1.Text = (Convert.ToString(num * num2));
+                    textBox1.Text = (Convert.ToString(rez * num2));
                     break;
                 case '/':
                     if (num2 == 0) MessageBox.Show("Деленние на ноль");
-                    else textBox1.Text = (Convert.ToString(num/num2));
+                    else textBox1.Text = (Convert.ToString(rez / num2));
                     break;
                 case '^':
-                    textBox1.Text = (Convert.ToString(Math.Pow(num, num2)));
+                    textBox1.Text = (Convert.ToString(Math.Pow(rez, num2)));
                     break;
                 case '√':
-                    if ((num < 0) && (num2 % 2 == 0)) MessageBox.Show("Мнимое число");
-                    else textBox1.Text = (Convert.ToString(Math.Pow(num, 1/num2)));
+                    if ((rez < 0) && (num2 % 2 == 0)) MessageBox.Show("Мнимое число");
+                    else textBox1.Text = (Convert.ToString(Math.Pow(rez, 1 / num2)));
                     break;
                 default:
                     MessageBox.Show("Действие не выбрано");
