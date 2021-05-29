@@ -59,6 +59,7 @@ namespace Calculator
             this.button_1x = new System.Windows.Forms.Button();
             this.button_sin = new System.Windows.Forms.Button();
             this.button_cos = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -358,11 +359,19 @@ namespace Calculator
             this.button_cos.UseVisualStyleBackColor = true;
             this.button_cos.Click += new System.EventHandler(this.button_cos_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(560, 301);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(79, 27);
+            this.textBox3.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 415);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button_cos);
             this.Controls.Add(this.button_sin);
             this.Controls.Add(this.button_1x);
@@ -433,6 +442,7 @@ namespace Calculator
         private System.Windows.Forms.Button button_1x;
         private System.Windows.Forms.Button button_sin;
         private System.Windows.Forms.Button button_cos;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

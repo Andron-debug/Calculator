@@ -14,7 +14,9 @@ namespace Calculator
     {
         char action;
         double m = 0;//память
-        double rez = 0;
+        double rez;
+        double num;
+        bool first = true;
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace Calculator
                     textBox1.Text += key.Text;
                     break;
             }
+            num = double.Parse(textBox1.Text);
         }
 
         private void clear_Click(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace Calculator
             textBox2.Text = "";
             action = ' ';
             rez = 0;
-        }
+         }
         private void plus_minus_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text[0] != '0') && (textBox1.Text[0] != '-')) textBox1.Text = "-" + textBox1.Text;
@@ -56,34 +59,45 @@ namespace Calculator
         {
             Button key = (Button)sender;
             action = key.Text[0];
-            rez = Double.Parse(textBox1.Text);
-            double num2 = Double.Parse(textBox1.Text);
-            switch (action)
+            textBox1.Text = "0";
+                switch (action)
             {
                 case '+':
-                    rez = rez + num2;
+                    rez = rez + num;
                     break;
                 case '-':
-                    rez = rez - num2;
+                    rez = rez - num;
                     break;
                 case '*':
-                    rez = rez * num2;
+                    if (first) rez = num; 
+                    else rez = rez * num;
                     break;
                 case '/':
-                    if (num2 == 0) MessageBox.Show("Деленние на ноль");
-                    else rez = rez / num2;
+                    if (first) rez = num;
+                    else
+                    {
+                        if (num == 0) MessageBox.Show("Деленние на ноль");
+                        else rez = rez / num;
+                    }
                     break;
                 case '^':
-                    rez = Math.Pow(rez, num2);
+                    if (first) rez = num;
+                    else rez = Math.Pow(rez, num);
                     break;
                 case '√':
-                    if ((rez < 0) && (num2 % 2 == 0)) MessageBox.Show("Мнимое число");
-                    else rez = Math.Pow(rez, 1 / num2);
+                    if (first) rez = num;
+                    else
+                    {
+                        if ((rez < 0) && (num % 2 == 0)) MessageBox.Show("Мнимое число");
+                        else rez = Math.Pow(rez, 1 / num);
+                    }
                     break;
                
             }
             textBox1.Text = "0";
+            textBox3.Text = rez.ToString();
             textBox2.Text = key.Text;
+            first = false;
         }
 
         private void button_result_Click(object sender, EventArgs e)
@@ -115,6 +129,8 @@ namespace Calculator
                     MessageBox.Show("Действие не выбрано");
                     break;
             }
+            rez = 0;
+            first = true;
         }
 
         private void backspace_Click(object sender, EventArgs e)
